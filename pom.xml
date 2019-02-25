@@ -11,7 +11,7 @@
   <name>supermarket-receipt</name>
   <description>A simple supermarket-receipt.</description>
   <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <url>https://github.com/yoan90/supermarket-receipt</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
