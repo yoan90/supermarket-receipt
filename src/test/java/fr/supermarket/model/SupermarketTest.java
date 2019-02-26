@@ -57,7 +57,8 @@ public class SupermarketTest {
         
         SupermarketCatalog catalog = new FakeCatalog();
         Product apples = new Product("apples", ProductUnit.Kilo);
-        
+        catalog.addProduct(apples, 1.99);
+
         ShoppingCart cart = new ShoppingCart();
         cart.addItem(apples,1.99);
         
