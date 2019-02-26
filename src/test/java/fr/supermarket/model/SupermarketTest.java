@@ -28,7 +28,7 @@ public class SupermarketTest {
         double totalPrice = receipt.getTotalPrice();
         Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(expectedTotalPrice).as("apple test and toothbrush");
     }
-}
+
 
 // Test des 10% de remise sur le rix sachant que le prix normal est de 2.49€ par sachet 
 
@@ -52,3 +52,5 @@ public class SupermarketTest {
         Assertions.assertThat(totalPrice).isEqualTo(expectedTotalPrice).as("test ten percent discount on the rice bag");
 
     }
+    
+ }
