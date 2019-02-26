@@ -29,3 +29,26 @@ public class SupermarketTest {
         Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(expectedTotalPrice).as("apple test and toothbrush");
     }
 }
+
+// Test des 10% de remise sur le rix sachant que le prix normal est de 2.49€ par sachet 
+
+@Test
+    public void testTenPercentDiscount() {
+
+        SupermarketCatalog catalog = new FakeCatalog();
+        Product rice = new Product("rice",ProductUnit.Each);
+        catalog.addProduct(rice, 2.49);
+
+        ShoppingCart cart = new ShoppingCart();
+        cart.addItem(rice);
+
+        Teller teller = new Teller(catalog);
+        teller.addSpecialOffer(SpecialOfferType.TenPercentDiscount, rice,10.0);
+
+        Receipt receipt = teller.checksOutArticlesFrom(cart);
+
+        double expectedTotalPrice =  2.49 - ((2.49*10)/100);
+        double totalPrice = receipt.getTotalPrice();
+        Assertions.assertThat(totalPrice).isEqualTo(expectedTotalPrice).as("test ten percent discount on the rice bag");
+
+    }
