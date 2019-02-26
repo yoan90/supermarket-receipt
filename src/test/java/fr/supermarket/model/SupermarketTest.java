@@ -51,31 +51,28 @@ public class SupermarketTest {
         Assertions.assertThat(totalPrice).isEqualTo(expectedTotalPrice).as("test ten percent discount on the rice bag");
 
     }
+
     
-    //Test 20% de remises sur les pommes sachant que le prix  normal est de 1.99€ le kilos
-    Public void TestTwentyPercentDiscount () {
-        
+ @Test
+    public void testThreeForTwo() {
+
         SupermarketCatalog catalog = new FakeCatalog();
-        Product apples = new Product("apples", ProductUnit.Kilo);
-        catalog.addProduct(apples, 1.99);
+        Product toothbrush = new Product("toothbrush", ProductUnit.Each);
+        catalog.addProduct(toothbrush, 0.99);
 
         ShoppingCart cart = new ShoppingCart();
-        cart.addItem(apples,1.99);
-        
-        Teller teller = new Teller(catalog);
-        teller.addSpecialOffer(SpecialOfferType.TwentyPercentDiscont, apples,20.0);
-        
-        Receipt receipt = teller.checksOutArticlesFrom(cart);
-        
-        
-        double expectedTotalPrice =  1.99 - ((1.99*20)/100);
-        double totalPrice = receipt.getTotalPrice();
-        Assertions.assertThat(totalPrice).isEqualTo(expectedTotalPrice).as("test twenty percent discount on the apple");
-        
+        cart.addItemQuantity(toothbrush, 3.0);
 
-        
+        Teller teller = new Teller(catalog);
+        teller.addSpecialOffer(SpecialOfferType.ThreeForTwo, toothbrush,0);
+
+        Receipt receipt = teller.checksOutArticlesFrom(cart);
+
+        double expectedTotalPrice = (0.99*2);
+        double totalPrice = receipt.getTotalPrice();
+        Assertions.assertThat(totalPrice).isEqualTo(expectedTotalPrice).as("Test three toothbrush for the price of two");
+
     }
-    
     
     
  }
