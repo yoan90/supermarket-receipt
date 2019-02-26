@@ -1,4 +1,4 @@
-package dojo.supermarket.model;
+package fr.esiea.supermarket.model;
 
 import org.junit.jupiter.api.Test;
 import org.assertj.core.api.Assertions;
@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SupermarketTest {
 
+    // Test 2.5 kg de pommes à 1.99€
     @Test
     public void testSomething() {
         SupermarketCatalog catalog = new FakeCatalog();
@@ -52,7 +53,7 @@ public class SupermarketTest {
 
     }
 
-    
+ // Test 3 pour le prix de 2
  @Test
     public void testThreeForTwo() {
 
