@@ -1,5 +1,5 @@
 package fr.esiea.supermarket.model;
-
+import fr.esiea.supermarket.model.*;
 import java.util.HashMap;
 import java.util.Map;
 
