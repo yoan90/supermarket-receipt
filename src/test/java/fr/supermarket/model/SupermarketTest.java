@@ -31,9 +31,8 @@ public class SupermarketTest {
 
 
 // Test des 10% de remise sur le rix sachant que le prix normal est de 2.49€ par sachet 
-
 @Test
-    public void testTenPercentDiscount() {
+    public void TestTenPercentDiscount() {
 
         SupermarketCatalog catalog = new FakeCatalog();
         Product rice = new Product("rice",ProductUnit.Each);
@@ -52,5 +51,30 @@ public class SupermarketTest {
         Assertions.assertThat(totalPrice).isEqualTo(expectedTotalPrice).as("test ten percent discount on the rice bag");
 
     }
+    
+    //Test 20% de remises sur les pommes sachant que le prix  normal est de 1.99€ le kilos
+    Public void TestTwentyPercentDiscount () {
+        
+        SupermarketCatalog catalog = new FakeCatalog();
+        Product apples = new Product("apples", ProductUnit.Kilo);
+        
+        ShoppingCart cart = new ShoppingCart();
+        cart.addItem(apples,1.99);
+        
+        Teller teller = new Teller(catalog);
+        teller.addSpecialOffer(SpecialOfferType.TwentyPercentDiscont, apples,20.0);
+        
+        Receipt receipt = teller.checksOutArticlesFrom(cart);
+        
+        
+        double expectedTotalPrice =  1.99 - ((1.99*20)/100);
+        double totalPrice = receipt.getTotalPrice();
+        Assertions.assertThat(totalPrice).isEqualTo(expectedTotalPrice).as("test twenty percent discount on the apple");
+        
+
+        
+    }
+    
+    
     
  }
