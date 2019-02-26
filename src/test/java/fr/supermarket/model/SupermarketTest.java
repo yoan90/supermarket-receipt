@@ -1,5 +1,5 @@
 package fr.esiea.supermarket.model;
-
+import fr.esiea.supermarket.model.*;
 import org.junit.jupiter.api.Test;
 import org.assertj.core.api.Assertions;
 import static org.junit.jupiter.api.Assertions.assertEquals;
