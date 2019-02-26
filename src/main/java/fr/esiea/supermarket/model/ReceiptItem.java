@@ -1,4 +1,5 @@
-package dojo.supermarket.model;
+package fr.esiea.supermarket.model;
+
 
 import java.util.Objects;
 
