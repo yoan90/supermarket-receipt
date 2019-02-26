@@ -1,4 +1,4 @@
-package dojo.supermarket.model;
+package fr.esiea.supermarket.model;
 
 public enum ProductUnit {
     Kilo, Each
