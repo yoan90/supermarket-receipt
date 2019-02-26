@@ -1,4 +1,4 @@
-package dojo.supermarket;
+package fr.esiea.supermarket.model;
 
 import dojo.supermarket.model.*;
 

@@ -1,4 +1,4 @@
-package fr.esiea;
+package fr.esiea.supermarket.model;
 
 public class HelloWorld {
 	
