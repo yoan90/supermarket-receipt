@@ -1,6 +1,9 @@
 package dojo.supermarket.model;
 
 import org.junit.jupiter.api.Test;
+import org.assertj.core.api.Assertions;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SupermarketTest {
 
