@@ -20,6 +20,9 @@ public class SupermarketTest {
 
         Receipt receipt = teller.checksOutArticlesFrom(cart);
 
-        // Todo: complete this test
+        //L'offre sur la brosse à dents n'a aucune influence sur le prix du kilos de pomme
+        double expectedTotalPrice = 2.5 * 1.99;
+        double totalPrice = receipt.getTotalPrice();
+        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(expectedTotalPrice).as("apple test and toothbrush");
     }
 }
