@@ -1,6 +1,6 @@
 package fr.esiea.supermarket.model;
 
-import dojo.supermarket.model.*;
+import fr.esiea.supermarket.model*;
 
 import java.util.Locale;
 
