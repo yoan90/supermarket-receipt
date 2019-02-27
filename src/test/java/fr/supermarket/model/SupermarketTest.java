@@ -173,6 +173,8 @@ public class SupermarketTest {
  }
     
  /*************************** RECEIPT ITEM **************************/
+ 
+public class ReceiptItemTest {
     
  @Test
     public void testReceiptPrinterWithoutDiscount(){
