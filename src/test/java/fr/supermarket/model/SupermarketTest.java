@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class SupermarketTest {
 
     // Test 2.5 kg de pommes à 1.99€
-    @Test
+ @Test
     public void testSomething() {
         SupermarketCatalog catalog = new FakeCatalog();
         Product toothbrush = new Product("toothbrush", ProductUnit.Each);
@@ -97,5 +97,26 @@ public class SupermarketTest {
 
     }
 
-    
+@Test //Test deux boites de tomate cerise pour 0.99€, sachant que le prix normale est de 0.69€ par boite
+
+    public void testTwoForAmount() {
+
+        SupermarketCatalog catalog = new FakeCatalog();
+
+        Product tomatoesBox = new Product("tomatoes Box", ProductUnit.Each);
+        catalog.addProduct(tomatoesBox,0.99);
+
+        ShoppingCart cart = new ShoppingCart();
+        cart.addItemQuantity(tomatoesBox, 2.0);
+
+        Teller teller = new Teller(catalog);
+        teller.addSpecialOffer(SpecialOfferType.TwoForAmount, tomatoesBox,0.99);
+
+        Receipt receipt = teller.checksOutArticlesFrom(cart);
+
+        double expectedTotalPrice = 0.99;
+        double totalPrice = receipt.getTotalPrice();
+        Assertions.assertThat(totalPrice).isEqualTo(expectedTotalPrice).as("Test two cherry tomatoe boxes discount");
+
+    }
  }
