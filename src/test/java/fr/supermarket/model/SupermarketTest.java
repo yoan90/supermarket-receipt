@@ -158,4 +158,24 @@ public class SupermarketTest {
         Assertions.assertThat(mango.equals(secondmango)).isFalse();
         Assertions.assertThat(mango.equals("mango")).isFalse();
     }
+    
+    
+   @Test
+    public void testBasicShoppingCart(){
+        Product toothbrush = new Product("toothpaste", ProductUnit.Each);
+        ShoppingCart cart = new ShoppingCart();
+        
+        catalog.addProduct(toothpaste,1.79);
+        cart.addItemQuantity(toothpaste, 2);
+
+        Teller teller = new Teller(catalog);
+        Receipt receipt = teller.checksOutArticlesFrom(cart)
+            
+        Assertions.assertThat(cart.productQuantities.values().toString()).isNotNull();
+        //Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(3.58).as("total cart price");
+    }
+    
+    
+    
+    
  }
