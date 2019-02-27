@@ -125,7 +125,7 @@ public class SupermarketTest {
 
         SupermarketCatalog catalog = new FakeCatalog();
 
-        Product toothbrush = new Product("tomatoes Boxes", ProductUnit.Each);
+        Product tomatoesBox = new Product("tomatoes Boxes", ProductUnit.Each);
         catalog.addProduct(tomatoesBox, 0.99);
 
         ShoppingCart cart = new ShoppingCart();
