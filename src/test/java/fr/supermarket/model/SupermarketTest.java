@@ -237,10 +237,10 @@ public class SupermarketTest {
         ReceiptItem receiptItemeau = new ReceiptItem(eau, 20, 1, 40);
        
 
-        assertThat(receiptItemfleur).isNotEqualTo(null);
-        assertThat(receiptItemeau.equals(eau)).isEqualTo(true);
-        assertThat(receiptItemvin.equals(eau)).isEqualTo(false);
-        assertThat(receiptItemfleur.equals("fleur")).isEqualTo(false);
+         Assertions.assertThat(receiptItemfleur).isNotEqualTo(null);
+         Assertions.assertThat(receiptItemeau.equals(eau)).isEqualTo(true);
+         Assertions.assertThat(receiptItemvin.equals(eau)).isEqualTo(false);
+        Assertions.assertThat(receiptItemfleur.equals("fleur")).isEqualTo(false);
     }
     
     
