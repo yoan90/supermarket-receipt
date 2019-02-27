@@ -103,7 +103,7 @@ public class SupermarketTest {
 
         SupermarketCatalog catalog = new FakeCatalog();
 
-        Product tomatoesBox = new Product("tomatoes Box", ProductUnit.Each);
+        Product tomatoesBox = new Product("tomatoes Boxes", ProductUnit.Each);
         catalog.addProduct(tomatoesBox,0.99);
 
         ShoppingCart cart = new ShoppingCart();
@@ -117,6 +117,26 @@ public class SupermarketTest {
         double expectedTotalPrice = 0.99;
         double totalPrice = receipt.getTotalPrice();
         Assertions.assertThat(totalPrice).isEqualTo(expectedTotalPrice).as("Test two cherry tomatoe boxes discount");
+
+    }
+    
+ @Test //Test aucune remise proposée
+    public void testWithoutDiscountProposed() {
+
+        SupermarketCatalog catalog = new FakeCatalog();
+
+        Product toothbrush = new Product("tomatoes Boxes", ProductUnit.Each);
+        catalog.addProduct(tomatoeBox, 0.99);
+
+        ShoppingCart cart = new ShoppingCart();
+        cart.addItemQuantity(tomatoeBox, 9.0);
+
+        Teller teller = new Teller(catalog);
+        Receipt receipt = teller.checksOutArticlesFrom(cart);
+
+        double expectedTotalPrice = (0.99*9);
+        double totalPrice = receipt.getTotalPrice();
+        Assertions.assertThat(totalPrice).isEqualTo(expectedTotalPrice).as("Test Without discount proposed");
 
     }
  }
