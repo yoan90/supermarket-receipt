@@ -139,4 +139,23 @@ public class SupermarketTest {
         Assertions.assertThat(totalPrice).isEqualTo(expectedTotalPrice).as("Test Without discount proposed");
 
     }
+    @Test
+    public void testEqual() {
+        Product apples = new Product("apples", ProductUnit.Kilo);
+        Product mango = new Product("mango", ProductUnit.Each);
+        
+        Product firstapple = new Product("apple 1", ProductUnit.Kilo);
+        Product secondapple = new Product("apple 2", ProductUnit.Each);
+        Product Thirdapple = new Product("apple 3", ProductUnit.Each);
+        Product secondmango = new Product("mango 2", ProductUnit.Each);
+        
+        
+        Assertions.assertThat(apples.equals(null)).isFalse();
+         Assertions.assertThat(apples.equals(null)).isFalse();
+
+        Assertions.assertThat(mango.equals(apples)).isFalse();
+        Assertions.assertThat(apples.equals(apples)).isTrue();
+        Assertions.assertThat(mango.equals(secondmango)).isTrue();
+        Assertions.assertThat(mango.equals("mango")).isFalse();
+    }
  }
