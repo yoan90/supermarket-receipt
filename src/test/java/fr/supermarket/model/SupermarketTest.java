@@ -205,6 +205,23 @@ public class SupermarketTest {
         Assertions.assertThat(expectedQuantity).isEqualTo(item.getQuantity()).as("item quantity test");
     }
    
+    
+  @Test
+    public void testReceiptItemAttribut(){
+        Product apples = new Product("apples", ProductUnit.Kilo);
+        Product flan = new Product("flan", ProductUnit.Each);
+
+        ReceiptItem receiptItemapple = new ReceiptItem(apples,2,3,6);
+        ReceiptItem receiptItemflan = new ReceiptItem(flan,1,4,4);
+        
+        assertThat(receiptItemapple.getProduct()).isEqualTo(apples);
+        assertThat(receiptItemapple.getQuantity()).isEqualTo(2);
+        assertThat(receiptItemapple.getPrice()).isEqualTo(3);
+        assertThat(receiptItemapple.getTotalPrice()).isEqualTo(6);
+        assertThat(receiptItemapple.getTotalPrice()).isEqualTo(4);
+
+
+    }
  @Test
     public void testFinalPriceItem(){
         Product boussole = new Product("boussole", ProductUnit.Each);
