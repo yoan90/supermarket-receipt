@@ -170,7 +170,7 @@ public class SupermarketTest {
     }
     
  @Test
-    public void testReceiptPrinterWithoutdiscount(){
+    public void testReceiptPrinterWithoutDiscount(){
         
         SupermarketCatalog catalog = new FakeCatalog();
         ReceiptPrinter printer = new ReceiptPrinter();
@@ -194,6 +194,23 @@ public class SupermarketTest {
         
         Assertions.assertThat(printer.printReceipt(receipt)).isNotBlank();
         Assertions.assertThat(string_init).isEqualTo(result);
+    }
+    
+    
+  @Test
+      public void testReceiptItemQuantity() {
+        Product toothbrush = new Product("toothbrush", ProductUnit.Each);
+        ReceiptItem item = new ReceiptItem(toothbrush, 2, 3, 6);
+        double expectedQuantity = 2;
+        Assertions.assertThat(expectedQuantity).isEqualTo(item.getQuantity()).as("item quantity test");
+    }
+   
+ @Test
+    public void testFinalPriceItem(){
+        Product boussole = new Product("boussole", ProductUnit.Each);
+        ReceiptItem item = new ReceiptItem(boussole, 1, 10, 20 );
+        double finalprice = 20;
+        Assertions.assertThat(finalprice).isEqualTo(item.getTotalPrice()).as("final price");
     }
     
     
