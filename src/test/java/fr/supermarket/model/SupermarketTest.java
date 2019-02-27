@@ -170,11 +170,11 @@ public class SupermarketTest {
     }
     
   
- }
+ //}
     
  /*************************** RECEIPT ITEM **************************/
  
-public class ReceiptItemTest {
+//public class ReceiptItemTest {
     
  @Test
     public void testReceiptPrinterWithoutDiscount(){
@@ -257,11 +257,11 @@ public class ReceiptItemTest {
     }
 
     
- }
+ //}
 
  /************************* RECEIPT PRINTER ************************/
     
- public class ReceiptPrinterTest {
+ //public class ReceiptPrinterTest {
 
     @Test
     public void DefaultReceiptPrinterTest() {
