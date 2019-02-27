@@ -225,7 +225,7 @@ public class SupermarketTest {
     }
     
     
-    @Test
+   /* @Test
     public void testReceiptItemEquals(){
         
         Product fleur = new Product("fleur", ProductUnit.Each);
@@ -242,7 +242,7 @@ public class SupermarketTest {
          Assertions.assertThat(receiptItemvin.equals(eau)).isEqualTo(false);
         Assertions.assertThat(receiptItemfleur.equals("fleur")).isEqualTo(false);
     }
-    
+    */
     
     
  @Test
