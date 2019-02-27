@@ -208,17 +208,18 @@ public class SupermarketTest {
     
   @Test
     public void testReceiptItemAttribut(){
+        
         Product apples = new Product("apples", ProductUnit.Kilo);
         Product flan = new Product("flan", ProductUnit.Each);
 
         ReceiptItem receiptItemapple = new ReceiptItem(apples,2,3,6);
         ReceiptItem receiptItemflan = new ReceiptItem(flan,1,4,4);
         
-        assertThat(receiptItemapple.getProduct()).isEqualTo(apples);
-        assertThat(receiptItemapple.getQuantity()).isEqualTo(2);
-        assertThat(receiptItemapple.getPrice()).isEqualTo(3);
-        assertThat(receiptItemapple.getTotalPrice()).isEqualTo(6);
-        assertThat(receiptItemapple.getTotalPrice()).isEqualTo(4);
+        Assertions.assertThat(receiptItemapple.getProduct()).isEqualTo(apples);
+        Assertions.assertThat(receiptItemapple.getQuantity()).isEqualTo(2);
+        Assertions.assertThat(receiptItemapple.getPrice()).isEqualTo(3);
+        Assertions.assertThat(receiptItemapple.getTotalPrice()).isEqualTo(6);     
+        Assertions.assertThat(receiptItemapple.getTotalPrice()).isEqualTo(4);
 
 
     }
