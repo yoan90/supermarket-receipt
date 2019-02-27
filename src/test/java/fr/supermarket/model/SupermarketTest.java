@@ -151,8 +151,7 @@ public class SupermarketTest {
         
         
         Assertions.assertThat(apples.equals(null)).isFalse();
-         Assertions.assertThat(apples.equals(null)).isFalse();
-
+        Assertions.assertThat(apples.equals(null)).isFalse();
         Assertions.assertThat(mango.equals(apples)).isFalse();
         Assertions.assertThat(apples.equals(apples)).isTrue();
         Assertions.assertThat(mango.equals(secondmango)).isFalse();
@@ -166,12 +165,35 @@ public class SupermarketTest {
         ShoppingCart cart = new ShoppingCart();
         
         cart.addItemQuantity(toothpaste, 2);
-
-            
         Assertions.assertThat(cart.productQuantities.values().toString()).isNotNull();
     }
     
-    
+ @Test
+    public void testReceiptPrinterWithoutdiscount(){
+        
+        SupermarketCatalog catalog = new FakeCatalog();
+        ReceiptPrinter printer = new ReceiptPrinter();
+        ShoppingCart cart = new ShoppingCart();
+        Teller teller = new Teller(catalog);
+       
+
+        Product apples = new Product("apples", ProductUnit.Kilo);
+        catalog.addProduct(apples, 1.99);
+        cart.addItemQuantity(apples,10);
+
+        Product toothbrush = new Product("toothbrush", ProductUnit.Each);
+        catalog.addProduct(toothbrush, 0.99);
+        cart.addItemQuantity(toothbrush,5);
+        
+        Receipt receipt = teller.checksOutArticlesFrom(cart);
+ 
+        Assertions.assertThat(printer.printReceipt(receipt)).isNotBlank();
+
+        String string_init = printer.printReceipt(receipt);
+        String result = "apples"+"  "+"19.9"+"\n"+"toothbrush"+"4.95":"total :24.85"  ;
+
+        Assertions.assertThat(string_init).isEqualTo(result);
+    }
     
     
  }
