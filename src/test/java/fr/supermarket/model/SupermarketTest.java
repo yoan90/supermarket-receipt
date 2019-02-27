@@ -53,7 +53,7 @@ public class SupermarketTest {
 
     }
 
- // Test 3 pour le prix de 2
+ // Test 3 pour le prix de 2 brosse à dents
  @Test
     public void testThreeForTwo() {
 
@@ -74,6 +74,28 @@ public class SupermarketTest {
         Assertions.assertThat(totalPrice).isEqualTo(expectedTotalPrice).as("Test three toothbrush for the price of two");
 
     }
+    // Test 5 dentifrice pour 7.49€, sachant qu le prix à l'unité est de 1.79€
     
+@Test 
+    public void testFiveForAmount() {
+
+        SupermarketCatalog catalog = new FakeCatalog();
+        Product toothpaste = new Product("toothpaste", ProductUnit.Each);
+        catalog.addProduct(toothpaste,1.79);
+
+        ShoppingCart cart = new ShoppingCart();
+        cart.addItemQuantity(toothpaste, 5.0);
+
+        Teller teller = new Teller(catalog);
+        teller.addSpecialOffer(SpecialOfferType.FiveForAmount, toothpaste,7.49);
+
+        Receipt receipt = teller.checksOutArticlesFrom(cart);
+
+        double expectedTotalPrice = 7.49;
+        double totalPrice = receipt.getTotalPrice();
+        Assertions.assertThat(totalPrice).isEqualTo(expectedTotalPrice).as("Test five toothpaste discount");
+
+    }
+
     
  }
