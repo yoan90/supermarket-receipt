@@ -155,7 +155,7 @@ public class SupermarketTest {
 
         Assertions.assertThat(mango.equals(apples)).isFalse();
         Assertions.assertThat(apples.equals(apples)).isTrue();
-        Assertions.assertThat(mango.equals(secondmango)).isTrue();
+        Assertions.assertThat(mango.equals(secondmango)).isFalse();
         Assertions.assertThat(mango.equals("mango")).isFalse();
     }
  }
