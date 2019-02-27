@@ -165,15 +165,10 @@ public class SupermarketTest {
         Product toothpaste = new Product("toothpaste", ProductUnit.Each);
         ShoppingCart cart = new ShoppingCart();
         
-        Teller teller = new Teller(catalog);
-        Receipt receipt = teller.checksOutArticlesFrom(cart);
-        
-        catalog.addProduct(toothpaste,1.79);
         cart.addItemQuantity(toothpaste, 2);
 
             
         Assertions.assertThat(cart.productQuantities.values().toString()).isNotNull();
-        //Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(3.58).as("total cart price");
     }
     
     
