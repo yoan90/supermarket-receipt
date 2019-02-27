@@ -1,5 +1,6 @@
 package fr.esiea.supermarket.model;
 import fr.esiea.supermarket.model.*;
+import fr.esiea.supermarket.ReceiptPrinter;
 import org.junit.jupiter.api.Test;
 import org.assertj.core.api.Assertions;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -187,11 +188,11 @@ public class SupermarketTest {
         
         Receipt receipt = teller.checksOutArticlesFrom(cart);
  
-        Assertions.assertThat(printer.printReceipt(receipt)).isNotBlank();
 
         String string_init = printer.printReceipt(receipt);
         String result = "apples" + "   " + "19.9" + "\n" + "toothbrush" + "4.95 = 24.85";
-
+        
+        Assertions.assertThat(printer.printReceipt(receipt)).isNotBlank();
         Assertions.assertThat(string_init).isEqualTo(result);
     }
     
