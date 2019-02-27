@@ -1,6 +1,6 @@
 package fr.esiea.supermarket;
 
-import fr.esiea.supermarket.model*;
+import fr.esiea.supermarket.model.*;
 
 import java.util.Locale;
 
