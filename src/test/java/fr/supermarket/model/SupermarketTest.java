@@ -190,7 +190,7 @@ public class SupermarketTest {
         Assertions.assertThat(printer.printReceipt(receipt)).isNotBlank();
 
         String string_init = printer.printReceipt(receipt);
-        String result = "apples"+"  "+"19.9"+"\n"+"toothbrush"+"4.95":"total :24.85"  ;
+        String result = "apples"+"  "+"19.9"+"\n"+"toothbrush"+"4.95" "total: 24.85"  ;
 
         Assertions.assertThat(string_init).isEqualTo(result);
     }
