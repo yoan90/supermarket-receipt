@@ -162,7 +162,7 @@ public class SupermarketTest {
     
    @Test
     public void testBasicShoppingCart(){
-        Product toothbrush = new Product("toothpaste", ProductUnit.Each);
+        Product toothpaste = new Product("toothpaste", ProductUnit.Each);
         ShoppingCart cart = new ShoppingCart();
         
         catalog.addProduct(toothpaste,1.79);
