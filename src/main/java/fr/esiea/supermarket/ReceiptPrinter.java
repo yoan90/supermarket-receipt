@@ -1,4 +1,4 @@
-package fr.esiea.supermarket.model;
+package fr.esiea.supermarket;
 
 import fr.esiea.supermarket.model*;
 
