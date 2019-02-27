@@ -169,7 +169,7 @@ public class SupermarketTest {
         cart.addItemQuantity(toothpaste, 2);
 
         Teller teller = new Teller(catalog);
-        Receipt receipt = teller.checksOutArticlesFrom(cart)
+        Receipt receipt = teller.checksOutArticlesFrom(cart);
             
         Assertions.assertThat(cart.productQuantities.values().toString()).isNotNull();
         //Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(3.58).as("total cart price");
