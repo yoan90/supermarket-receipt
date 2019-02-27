@@ -126,10 +126,10 @@ public class SupermarketTest {
         SupermarketCatalog catalog = new FakeCatalog();
 
         Product toothbrush = new Product("tomatoes Boxes", ProductUnit.Each);
-        catalog.addProduct(tomatoeBox, 0.99);
+        catalog.addProduct(tomatoesBox, 0.99);
 
         ShoppingCart cart = new ShoppingCart();
-        cart.addItemQuantity(tomatoeBox, 9.0);
+        cart.addItemQuantity(tomatoesBox, 9.0);
 
         Teller teller = new Teller(catalog);
         Receipt receipt = teller.checksOutArticlesFrom(cart);
